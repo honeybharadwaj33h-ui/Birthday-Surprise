@@ -1,0 +1,487 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-script: 'Dancing Script', cursive;
+    --font-hand: 'Caveat', cursive;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: radial-gradient(circle at 50% 0%, #FFF5F7 0%, #FFF0F5 45%, #FDF2F8 100%);
+    color: #4A3E3D;
+    min-height: 100vh;
+  }
+}
+
+.font-serif-title {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-script-romantic {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+/* Custom romantic glow & subtle animations */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1.5deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.9));
+  }
+  25% {
+    transform: scale(1.08, 0.94) rotate(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 14px rgba(245, 158, 11, 1));
+  }
+  50% {
+    transform: scale(0.95, 1.06) rotate(-1deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.85));
+  }
+  75% {
+    transform: scale(1.05, 0.98) rotate(2.5deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.95));
+  }
+}
+
+.animate-flame {
+  animation: flameFlicker 1.3s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(244, 114, 182, 0.35), 0 0 30px rgba(251, 113, 133, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(244, 114, 182, 0.6), 0 0 45px rgba(251, 113, 133, 0.3);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* --- Cinematic Lamp Opening Animations --- */
+@keyframes chainSway {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+.animate-chain-sway {
+  transform-origin: top center;
+  animation: chainSway 3.6s ease-in-out infinite;
+}
+
+@keyframes lampRayExpand {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  40% {
+    opacity: 0.95;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+.animate-lamp-rays {
+  transform-origin: 20% 24%;
+  animation: lampRayExpand 1.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- Our Little Universe: Subtle Animated Anime Illustration Effects --- */
+@keyframes kenBurnsA {
+  0% {
+    transform: scale(1.0) translate3d(0%, 0%, 0);
+  }
+  50% {
+    transform: scale(1.065) translate3d(-1.4%, -1.2%, 0);
+  }
+  100% {
+    transform: scale(1.0) translate3d(0%, 0%, 0);
+  }
+}
+
+@keyframes kenBurnsB {
+  0% {
+    transform: scale(1.05) translate3d(1.2%, -0.8%, 0);
+  }
+  50% {
+    transform: scale(1.0) translate3d(-1%, 1%, 0);
+  }
+  100% {
+    transform: scale(1.05) translate3d(1.2%, -0.8%, 0);
+  }
+}
+
+.animate-ken-burns-a {
+  animation: kenBurnsA 16s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-ken-burns-b {
+  animation: kenBurnsB 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes petalFall {
+  0% {
+    transform: translate3d(0, -12%, 0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(38px, 240px, 0) rotate(220deg);
+    opacity: 0;
+  }
+}
+
+.animate-petal-fall {
+  animation: petalFall 7.5s linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes starTwinkleFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(0.75);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(5px, -8px, 0) scale(1.25);
+    opacity: 1;
+  }
+}
+
+.animate-star-twinkle {
+  animation: starTwinkleFloat 3.4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes miniHeartRise {
+  0% {
+    transform: translate3d(0, 14px, 0) scale(0.7);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate3d(-10px, -110px, 0) scale(1.15);
+    opacity: 0;
+  }
+}
+
+.animate-mini-heart-rise {
+  animation: miniHeartRise 6.2s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes fireflyDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(0.8);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate3d(16px, -18px, 0) scale(1.3);
+    opacity: 0.95;
+  }
+  66% {
+    transform: translate3d(-12px, -8px, 0) scale(1.0);
+    opacity: 0.65;
+  }
+}
+
+.animate-firefly {
+  animation: fireflyDrift 5.4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Interactive Red Heart Fill & Burst */
+@keyframes heartFillPop {
+  0% {
+    transform: scale(0.7);
+  }
+  45% {
+    transform: scale(1.32);
+  }
+  75% {
+    transform: scale(0.94);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-heart-fill-pop {
+  animation: heartFillPop 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heartSparkBurst {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--burst-x, 0px), var(--burst-y, -38px), 0) scale(1.15);
+    opacity: 0;
+  }
+}
+
+.animate-heart-burst {
+  animation: heartSparkBurst 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- Realistic Teddy Bear & Candle Airflow Animations --- */
+@keyframes teddyWalkGait {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1.5deg);
+  }
+  25% {
+    transform: translateY(-7px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(1.5deg);
+  }
+  75% {
+    transform: translateY(-6px) rotate(-2deg);
+  }
+}
+
+.animate-teddy-walk {
+  animation: teddyWalkGait 0.48s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes teddyCheerBounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
+}
+
+.animate-teddy-cheer {
+  animation: teddyCheerBounce 1.1s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes windDash {
+  0% {
+    stroke-dashoffset: 90;
+    opacity: 0;
+  }
+  22% {
+    opacity: 0.92;
+  }
+  75% {
+    opacity: 0.78;
+  }
+  100% {
+    stroke-dashoffset: -40;
+    opacity: 0;
+  }
+}
+
+.animate-wind-dash {
+  stroke-dasharray: 28 18;
+  animation: windDash 0.65s linear infinite;
+}
+
+@keyframes airPuffTravel {
+  0% {
+    transform: translate3d(0px, 0px, 0) scale(0.45);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(175px, var(--puff-y, -18px), 0) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.animate-air-puff {
+  animation: airPuffTravel 0.75s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes flameBendWind {
+  0% {
+    transform: rotate(0deg) skewX(0deg) scale(1, 1);
+  }
+  25% {
+    transform: rotate(34deg) skewX(20deg) scale(0.92, 0.78);
+    filter: drop-shadow(5px -1px 10px rgba(245, 158, 11, 0.95));
+  }
+  50% {
+    transform: rotate(46deg) skewX(26deg) scale(0.84, 0.65);
+    filter: drop-shadow(8px -2px 12px rgba(239, 68, 68, 0.9));
+  }
+  75% {
+    transform: rotate(38deg) skewX(22deg) scale(0.88, 0.72);
+    filter: drop-shadow(6px -1px 10px rgba(245, 158, 11, 0.95));
+  }
+  100% {
+    transform: rotate(48deg) skewX(28deg) scale(0.75, 0.55);
+  }
+}
+
+.animate-flame-bending {
+  animation: flameBendWind 0.38s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes smokeRise {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.6);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-18px) translateX(6px) scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-38px) translateX(-4px) scale(1.7);
+    opacity: 0;
+  }
+}
+
+.animate-smoke-rise {
+  animation: smokeRise 2s ease-out forwards;
+}
+
+/* Side Party Poppers Burst */
+@keyframes popperRecoilLeft {
+  0% {
+    transform: translateX(-60px) scale(0.85) rotate(-10deg);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(0px) scale(1.12) rotate(12deg);
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(-10px) scale(0.95) rotate(-4deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px) scale(1) rotate(6deg);
+    opacity: 1;
+  }
+}
+
+@keyframes popperRecoilRight {
+  0% {
+    transform: translateX(60px) scale(0.85) rotate(10deg);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(0px) scale(1.12) rotate(-12deg);
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(10px) scale(0.95) rotate(4deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px) scale(1) rotate(-6deg);
+    opacity: 1;
+  }
+}
+
+.animate-popper-left {
+  animation: popperRecoilLeft 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-popper-right {
+  animation: popperRecoilRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes topConfettiFall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(var(--drift-x, 24px), 105vh, 0) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+.animate-top-confetti {
+  animation: topConfettiFall var(--fall-dur, 4.2s) linear infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ken-burns-a,
+  .animate-ken-burns-b,
+  .animate-petal-fall,
+  .animate-star-twinkle,
+  .animate-mini-heart-rise,
+  .animate-firefly,
+  .animate-float-slow,
+  .animate-chain-sway {
+    animation: none !important;
+  }
+}
+
+/* Custom romantic scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF1F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #F472B6;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E11D48;
+}

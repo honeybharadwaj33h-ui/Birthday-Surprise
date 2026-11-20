@@ -1,0 +1,8 @@
+{
+  "name": "Magical Birthday Surprise for My Love",
+  "description": "A premium, romantic, interactive birthday surprise website with magical anime couple gift boxes, romantic reasons with custom artwork, love timeline, wax-sealed love letter, and 3D teddy bear candle blowing celebration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
